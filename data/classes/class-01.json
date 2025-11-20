@@ -1,0 +1,191 @@
+[
+  {
+    "id": "class-01",
+    "name": "Frontend Avançado 2025",
+    "description": "Uma jornada profunda em React, Next.js e feitiços de CSS.",
+    "professorId": "user-snape",
+    "isPrivate": false,
+    "password": null,
+    "isActive": true,
+    "createdAt": "2025-10-10T23:00:00.000Z",
+    "users": {},
+    "achievements": [
+      {
+        "id": "ach-001",
+        "name": "Primeira Varinha Quebrada",
+        "description": "Complete sua primeira missão na plataforma.",
+        "icon": "🪄",
+        "xpReward": 50
+      },
+      {
+        "id": "ach-002",
+        "name": "Nascido para o Código",
+        "description": "Acerte mais de 90% em seu primeiro quiz de JavaScript.",
+        "icon": "📜",
+        "xpReward": 100
+      },
+      {
+        "id": "ach-003",
+        "name": "Mestre dos Hooks",
+        "description": "Complete a missão de refatorar um componente de classe para funcional.",
+        "icon": "⚛️",
+        "xpReward": 250
+      }
+    ],
+    "missions": [
+      {
+        "id": "mission-001",
+        "title": "A Jornada Começa",
+        "description": "Complete qualquer quiz para provar seu valor.",
+        "icon": "🚀",
+        "xpReward": 100,
+        "galleonReward": 50,
+        "objective": {
+          "type": "complete_quiz",
+          "count": 1
+        },
+        "unlocksAchievementId": "ach-001"
+      },
+      {
+        "id": "mission-002",
+        "title": "Bruxo Sociável",
+        "description": "Faça 5 posts ou comentários no feed social.",
+        "icon": "💬",
+        "xpReward": 150,
+        "galleonReward": 75,
+        "objective": {
+          "type": "social_interaction",
+          "count": 5
+        },
+        "unlocksAchievementId": null
+      },
+      {
+        "id": "mission-003",
+        "title": "Refatoração Reversa",
+        "description": "Pegue um componente funcional com Hooks e o reescreva usando Classes.",
+        "icon": "🔄",
+        "xpReward": 300,
+        "galleonReward": 100,
+        "objective": {
+          "type": "code_submission"
+        },
+        "unlocksAchievementId": "ach-003"
+      }
+    ],
+    "quizzes": [
+      {
+        "id": "quiz-js-fundamentals",
+        "title": "Fundamentos de JavaScript",
+        "description": "Teste seus feitiços básicos de JS: variáveis, funções e loops.",
+        "difficulty": "beginner",
+        "xpReward": 50,
+        "galleonReward": 25,
+        "unlocksAchievementId": "ach-002",
+        "questions": [
+          {
+            "id": "q1",
+            "question": "Qual a diferença entre `let` e `const`?",
+            "options": [
+              "Nenhuma",
+              "let é de bloco, const não",
+              "const não pode ser reatribuída"
+            ],
+            "correctAnswer": 2
+          },
+          {
+            "id": "q2",
+            "question": "Qual a diferença entre `let` e `const`?",
+            "options": [
+              "Nenhuma",
+              "let é de bloco, const não",
+              "const não pode ser reatribuída"
+            ],
+            "correctAnswer": 2
+          }
+        ],
+        "timeLimit": 10000
+      },
+      {
+        "id": "quiz-react-hooks",
+        "title": "O Poder dos Hooks",
+        "description": "Você domina `useState`, `useEffect` e `useContext`?",
+        "difficulty": "intermediate",
+        "xpReward": 100,
+        "galleonReward": 50,
+        "unlocksAchievementId": null,
+        "questions": [
+          {
+            "id": "q1",
+            "question": "Qual Hook é usado para lidar com efeitos colaterais?",
+            "options": [
+              "useState",
+              "useEffect",
+              "useReducer"
+            ],
+            "correctAnswer": 1
+          },
+          {
+            "id": "q2",
+            "question": "Qual Hook é usado para lidar com efeitos colaterais?",
+            "options": [
+              "useState",
+              "useEffect",
+              "useReducer"
+            ],
+            "correctAnswer": 1
+          }
+        ],
+        "timeLimit": 10000
+      }
+    ],
+    "shop": [
+      {
+        "id": "shop-item-001",
+        "name": "Vira-Tempo (5 min)",
+        "description": "Adiciona 5 minutos extras em qualquer quiz.",
+        "icon": "⏳",
+        "price": 200,
+        "category": "power-up",
+        "stock": 30
+      },
+      {
+        "id": "shop-item-002",
+        "name": "Pena de Resposta Rápida",
+        "description": "Revela a resposta correta de uma questão (1 uso).",
+        "icon": "🖋️",
+        "price": 350,
+        "category": "consumable",
+        "stock": 10
+      }
+    ],
+    "socialFeed": [],
+    "forumPosts": [],
+    "announcements": [
+      {
+        "id": "ann-001",
+        "authorId": "user-snape",
+        "title": "Nova Missão: O Desafio dos CSS Grid",
+        "content": "Uma nova e desafiadora missão sobre CSS Grid foi adicionada. Os 3 primeiros a completarem receberão 50 galeões extras. Não me decepcionem.",
+        "createdAt": "2025-10-14T08:00:00.000Z",
+        "isPinned": true,
+        "type": "general",
+        "priority": "medium",
+        "tags": [],
+        "isPublished": true,
+        "isDraft": false,
+        "allowComments": true,
+        "allowReactions": true,
+        "attachments": [],
+        "reactions": {
+          "like": 0,
+          "love": 0,
+          "wow": 0,
+          "sad": 0,
+          "angry": 0
+        },
+        "readBy": [],
+        "views": 0
+      }
+    ]
+  }
+]

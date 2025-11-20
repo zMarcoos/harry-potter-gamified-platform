@@ -1,0 +1,326 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: oklch(0.1768 0.0512 273.2);
+  --foreground: oklch(1 0 0);
+  --card: oklch(0.2494 0.0516 274.14);
+  --card-foreground: oklch(1 0 0);
+  --popover: oklch(0.2494 0.0516 274.14);
+  --popover-foreground: oklch(1 0 0);
+  --primary: oklch(0.7665 0.1387 91.06);
+  --primary-foreground: oklch(0.1768 0.0512 273.2);
+  --secondary: oklch(0.3729 0.0306 259.73);
+  --secondary-foreground: oklch(1 0 0);
+  --muted: oklch(0.4461 0.0263 256.8);
+  --muted-foreground: oklch(0.8717 0.0093 258.34);
+  --accent: oklch(0.8369 0.1644 84.43);
+  --accent-foreground: oklch(0.1768 0.0512 273.2);
+  --destructive: oklch(0.6368 0.2078 25.33);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.551 0.0234 264.36);
+  --input: oklch(0.3729 0.0306 259.73);
+  --ring: oklch(0.7665 0.1387 91.06);
+
+  --gryffindor: oklch(0.4715 0.1934 29.1);
+  --gryffindor-secondary: oklch(0.8143 0.1541 86.25);
+  --slytherin: oklch(0.3578 0.0707 152.75);
+  --slytherin-secondary: oklch(0.738 0 0);
+  --ravenclaw: oklch(0.2328 0.0743 267.21);
+  --ravenclaw-secondary: oklch(0.5576 0.0941 74.75);
+  --hufflepuff: oklch(0.8108 0.1486 85.73);
+  --hufflepuff-secondary: oklch(0.3093 0.0159 50.85);
+
+  --chart-1: oklch(0.4715 0.1934 29.1);
+  --chart-2: oklch(0.3578 0.0707 152.75);
+  --chart-3: oklch(0.2328 0.0743 267.21);
+  --chart-4: oklch(0.8108 0.1486 85.73);
+  --chart-5: oklch(0.5576 0.0941 74.75);
+  --radius: 0.75rem;
+  --sidebar: oklch(0.2494 0.0516 274.14);
+  --sidebar-foreground: oklch(1 0 0);
+  --sidebar-primary: oklch(0.7665 0.1387 91.06);
+  --sidebar-primary-foreground: oklch(0.1768 0.0512 273.2);
+  --sidebar-accent: oklch(0.8369 0.1644 84.43);
+  --sidebar-accent-foreground: oklch(0.1768 0.0512 273.2);
+  --sidebar-border: oklch(0.551 0.0234 264.36);
+  --sidebar-ring: oklch(0.7665 0.1387 91.06);
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --color-gryffindor: var(--gryffindor);
+  --color-gryffindor-secondary: var(--gryffindor-secondary);
+  --color-slytherin: var(--slytherin);
+  --color-slytherin-secondary: var(--slytherin-secondary);
+  --color-ravenclaw: var(--ravenclaw);
+  --color-ravenclaw-secondary: var(--ravenclaw-secondary);
+  --color-hufflepuff: var(--hufflepuff);
+  --color-hufflepuff-secondary: var(--hufflepuff-secondary);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50 transition-all duration-300 ease-in-out;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes sparkle {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 5px currentColor;
+  }
+
+  50% {
+    box-shadow:
+      0 0 20px currentColor,
+      0 0 30px currentColor;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-sparkle {
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.announcement-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.shimmer {
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(201, 169, 110, 0.4),
+      transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+.house-gryffindor {
+  background: linear-gradient(135deg, var(--gryffindor), var(--gryffindor-secondary));
+}
+
+.house-slytherin {
+  background: linear-gradient(135deg, var(--slytherin), var(--slytherin-secondary));
+}
+
+.house-ravenclaw {
+  background: linear-gradient(135deg, var(--ravenclaw), var(--ravenclaw-secondary));
+}
+
+.house-hufflepuff {
+  background: linear-gradient(135deg, var(--hufflepuff), var(--hufflepuff-secondary));
+}
+
+.magical-border {
+  background:
+    linear-gradient(var(--background), var(--background)) padding-box,
+    linear-gradient(45deg, var(--gryffindor), var(--gryffindor-secondary), var(--ravenclaw), var(--slytherin)) border-box;
+  border: 2px solid transparent;
+}
+
+.text-magical {
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(45deg, var(--gryffindor), var(--gryffindor-secondary), var(--ravenclaw), var(--slytherin));
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.mentor-glow {
+  box-shadow:
+    0 0 20px oklch(0.7499 0.0854 82.08),
+    0 0 40px oklch(0.7499 0.0854 82.08),
+    0 0 60px oklch(0.7499 0.0854 82.08);
+}
+
+.tabs-transition {
+  transform-origin: center;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.tabs-content-enter {
+  opacity: 0;
+  transform: translateY(10px) scale(0.98);
+}
+
+.tabs-content-enter-active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.tabs-content-exit {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.tabs-content-exit-active {
+  opacity: 0;
+  transform: translateY(-10px) scale(0.98);
+  transition: all 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+
+.smooth-transition {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-hover {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-hover:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  transform: translateY(-4px);
+}
+
+@keyframes chroma-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@layer components {
+  .text-chroma {
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    background: linear-gradient(90deg,
+        oklch(0.3795 0.1487 28.25),
+        oklch(0.8143 0.1541 86.25),
+        oklch(0.2328 0.0743 267.21),
+        oklch(0.4477 0.085 152.54),
+        oklch(0.5576 0.0941 74.75),
+        oklch(0.3795 0.1487 28.25));
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-size: 400% 400%;
+    animation: chroma-shift 12s ease-in-out infinite;
+  }
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
